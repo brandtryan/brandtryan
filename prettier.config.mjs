@@ -1,14 +1,13 @@
-/**
- * @see https://prettier.io/docs/configuration
- * @type {import("prettier").Config}
- */
-const config = {
-  trailingComma: "es5",
-  tabWidth: 2,
-  useTabs: true,
-  arrowParens: "avoid",
-  semi: true,
-  singleQuote: true,
+// .prettierrc.mjs
+/** @type {import("prettier").Config} */
+export default {
+  plugins: ["prettier-plugin-astro"],
+  overrides: [
+    {
+      files: "*.astro",
+      options: {
+        parser: "astro",
+      },
+    },
+  ],
 };
-
-export default config;
